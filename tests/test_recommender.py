@@ -1,4 +1,4 @@
-from src.recommender import Song, UserProfile, Recommender
+from src.recommender import Song, UserProfile, Recommender, load_songs
 
 def make_small_recommender() -> Recommender:
     songs = [
@@ -59,3 +59,30 @@ def test_explain_recommendation_returns_non_empty_string():
     explanation = rec.explain_recommendation(user, song)
     assert isinstance(explanation, str)
     assert explanation.strip() != ""
+
+
+def test_load_songs_from_csv():
+    """Test that load_songs correctly loads songs from the CSV file."""
+    songs = load_songs("data/songs.csv")
+    
+    # Check that songs were loaded
+    assert len(songs) > 0, "No songs were loaded from CSV"
+    
+    # Check first song structure
+    first_song = songs[0]
+    assert "id" in first_song
+    assert "title" in first_song
+    assert "artist" in first_song
+    assert "genre" in first_song
+    assert "mood" in first_song
+    
+    # Check data types
+    assert isinstance(first_song["id"], int), "Song ID should be an integer"
+    assert isinstance(first_song["title"], str), "Song title should be a string"
+    assert isinstance(first_song["energy"], float), "Energy should be a float"
+    assert isinstance(first_song["tempo_bpm"], float), "Tempo should be a float"
+    
+    # Verify specific song (first row should be "Sunrise City")
+    assert first_song["title"] == "Sunrise City"
+    assert first_song["artist"] == "Neon Echo"
+    assert first_song["genre"] == "pop"
