@@ -31,7 +31,17 @@ You can include a simple diagram or bullet list if helpful.
 
 Some features each song uses in my system includes genre, energy, tempo, valence, and mood. The UserProfile class stores the user's favorite music genre, preferred mood, target_energy, and their acoustic like. The Recommender computes a weighted score for each song by adding up match scores with respect to genre, mood, and energy. Songs are recommended by a ranking rule which sorts a list of songs based on the user's song scores and displays a certain number of songs. Some potential biases include the fact that the system prioritizes exact genre and mood rather than considering similar songs in similar genres or moods. Also the algorithm ignores other numeric values such as the user's acoustic preference, tempo, danceability, etc.
 
+Tests:
 
+![
+](<Screenshot 2026-04-12 at 8.24.43 PM.jpg>)
+![alt text](
+  <Screenshot 2026-04-12 at 8.24.29 PM.jpg>)
+![
+](<Screenshot 2026-04-12 at 8.24.57 PM.jpg>)
+[](<Screenshot 2026-04-14 at 9.10.50 PM-1.jpg>)
+[](<Screenshot 2026-04-14 at 9.11.05 PM.jpg>)
+![alt text](<Screenshot 2026-04-14 at 9.10.58 PM.jpg>)
 ---
 
 ## Getting Started

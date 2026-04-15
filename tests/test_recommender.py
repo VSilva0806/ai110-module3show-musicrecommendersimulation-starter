@@ -13,6 +13,12 @@ def make_small_recommender() -> Recommender:
             valence=0.9,
             danceability=0.8,
             acousticness=0.2,
+            year_released=2022,
+            popularity_score=75.0,
+            explicit_content=0,
+            artist_followers=1500.0,
+            spotify_streams=150.0,
+            radio_friendly=0.9,
         ),
         Song(
             id=2,
@@ -25,6 +31,12 @@ def make_small_recommender() -> Recommender:
             valence=0.6,
             danceability=0.5,
             acousticness=0.9,
+            year_released=2021,
+            popularity_score=65.0,
+            explicit_content=0,
+            artist_followers=1000.0,
+            spotify_streams=100.0,
+            radio_friendly=0.7,
         ),
     ]
     return Recommender(songs)
